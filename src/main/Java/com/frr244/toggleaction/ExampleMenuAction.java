@@ -1,4 +1,5 @@
 package com.frr244.toggleaction;
+
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ToggleAction;
@@ -10,12 +11,8 @@ public class ExampleMenuAction extends ToggleAction implements DumbAware {
     protected boolean selected = false;
 
     public ExampleMenuAction() {
+        super("Some Toggle", "A very fancy description", AllIcons.Toolwindows.ToolWindowChanges);
     }
-
-    public ExampleMenuAction(AnActionEvent e) {
-		super("Some Toggle", "A very fancy description", AllIcons.Toolwindows.ToolWindowChanges);
-        setSelected(e, ! isSelected(e));
-	}
 
     @Override
     public boolean isSelected(@NotNull AnActionEvent anActionEvent) {
@@ -26,5 +23,4 @@ public class ExampleMenuAction extends ToggleAction implements DumbAware {
     public void setSelected(@NotNull AnActionEvent anActionEvent, boolean b) {
         selected = b;
     }
-
 }
